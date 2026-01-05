@@ -273,6 +273,7 @@ public class Finder {
             }
 
             buildFinder.setListener(buildFinderListener);
+            buildFinder.allowPncLookupsOnly();
 
             Map<BuildSystemInteger, KojiBuild> builds = buildFinder.call();
 

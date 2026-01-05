@@ -99,7 +99,7 @@
     <version.org.codehaus.mojo.buildnumber-maven-plugin>3.2.1</version.org.codehaus.mojo.buildnumber-maven-plugin>
     <version.org.codehaus.mojo.versions-maven-plugin>2.20.1</version.org.codehaus.mojo.versions-maven-plugin>
     <version.org.ec4j.maven.editorconfig-maven-plugin>0.1.0</version.org.ec4j.maven.editorconfig-maven-plugin>
-    <version.org.jboss.pnc.build.finder>2.6.7</version.org.jboss.pnc.build.finder>
+    <version.org.jboss.pnc.build.finder>2.6.8-SNAPSHOT</version.org.jboss.pnc.build.finder>
     <version.org.jboss.pnc.logging>3.0.3</version.org.jboss.pnc.logging>
     <version.org.jboss.pnc.pnc>3.3.1</version.org.jboss.pnc.pnc>
     <version.org.jboss.pnc.pnc-api>3.2.4</version.org.jboss.pnc.pnc-api>
