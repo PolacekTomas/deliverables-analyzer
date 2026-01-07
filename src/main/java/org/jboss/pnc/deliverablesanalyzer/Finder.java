@@ -20,6 +20,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.nio.file.FileSystemException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -238,8 +239,12 @@ public class Finder {
         Map<ChecksumType, MultiValuedMap<String, LocalFile>> checksums;
         try {
             checksums = analyzer.call();
-        } catch (UnknownHostException e) {
-            throw new ReasonedException(ResultStatus.FAILED, "Invalid URL", "Please check the URL", e);
+        } catch (FileSystemException e) {
+            if (e.getCause() instanceof UnknownHostException) {
+                throw new ReasonedException(ResultStatus.FAILED, "Invalid URL", "Please check the URL", e);
+            } else {
+                throw new ReasonedException(ResultStatus.SYSTEM_ERROR, "Failed to analyze checksums", e);
+            }
         } catch (IOException e) {
             throw new ReasonedException(ResultStatus.SYSTEM_ERROR, "Failed to analyze checksums", e);
         }
